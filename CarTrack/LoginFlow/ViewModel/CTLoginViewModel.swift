@@ -119,6 +119,7 @@ extension CTLoginViewModel:CTInputTFCellDelegate{
         if let index = cell.tableView?.indexPath(for: cell){
             self.changeTextFieldUIOnBeginEditing(modelIndex: index.row)
             if index.row == LoginPageCells.CellTypeDropdown.rawValue{
+                self.delegate?.endTheViewEditing()
                 self.configureCellForCountryDropdown(row:index.row)
                 return false
             }
