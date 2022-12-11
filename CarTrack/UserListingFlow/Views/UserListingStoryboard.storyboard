@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Listing View Controller-->
+        <scene sceneID="D0v-cB-av8">
+            <objects>
+                <viewController storyboardIdentifier="CTUserListingViewController" id="JL7-TJ-7mo" customClass="CTUserListingViewController" customModule="CarTrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lyk-22-v4C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uvm-jv-zi2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JL7-TJ-7mo" id="2uF-MA-0Aq"/>
+                                    <outlet property="delegate" destination="JL7-TJ-7mo" id="dt8-m9-ygr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nGe-uf-hpc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Uvm-jv-zi2" firstAttribute="top" secondItem="Lyk-22-v4C" secondAttribute="top" id="FdG-Ab-pET"/>
+                            <constraint firstItem="nGe-uf-hpc" firstAttribute="trailing" secondItem="Uvm-jv-zi2" secondAttribute="trailing" id="ffg-Ux-xYn"/>
+                            <constraint firstItem="Uvm-jv-zi2" firstAttribute="leading" secondItem="Lyk-22-v4C" secondAttribute="leading" id="n9E-mG-YRK"/>
+                            <constraint firstItem="nGe-uf-hpc" firstAttribute="bottom" secondItem="Uvm-jv-zi2" secondAttribute="bottom" id="sAp-hy-4zS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userListTableView" destination="Uvm-jv-zi2" id="BFX-fc-5M6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MN5-Hv-aGe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="135"/>
+        </scene>
+        <!--User Location View Controller-->
+        <scene sceneID="eSg-wk-Efm">
+            <objects>
+                <viewController storyboardIdentifier="CTUserLocationViewController" id="Hqr-28-XDI" customClass="CTUserLocationViewController" customModule="CarTrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6f3-gh-zRi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SeI-Rr-d4a">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUQ-bx-wxQ">
+                                <rect key="frame" x="334" y="742" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="0kt-js-SFp"/>
+                                    <constraint firstAttribute="height" constant="60" id="yZ0-mR-Xy7"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="setUserOrigin:" destination="Hqr-28-XDI" eventType="touchUpInside" id="eBJ-SJ-fvV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hyz-7c-wKJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SeI-Rr-d4a" firstAttribute="leading" secondItem="Hyz-7c-wKJ" secondAttribute="leading" id="4Em-rS-Qbx"/>
+                            <constraint firstItem="Hyz-7c-wKJ" firstAttribute="bottom" secondItem="OUQ-bx-wxQ" secondAttribute="bottom" constant="60" id="8n7-vh-yy8"/>
+                            <constraint firstItem="Hyz-7c-wKJ" firstAttribute="bottom" secondItem="SeI-Rr-d4a" secondAttribute="bottom" id="FLQ-bb-qvA"/>
+                            <constraint firstItem="Hyz-7c-wKJ" firstAttribute="trailing" secondItem="SeI-Rr-d4a" secondAttribute="trailing" id="PLA-s9-cOm"/>
+                            <constraint firstItem="Hyz-7c-wKJ" firstAttribute="trailing" secondItem="OUQ-bx-wxQ" secondAttribute="trailing" constant="20" id="eUA-NB-c74"/>
+                            <constraint firstItem="SeI-Rr-d4a" firstAttribute="top" secondItem="Hyz-7c-wKJ" secondAttribute="top" id="v5S-l6-y0t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userMap" destination="SeI-Rr-d4a" id="F11-ck-tWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pf9-fM-evd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2356.521739130435" y="134.59821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location" width="80" height="80"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
