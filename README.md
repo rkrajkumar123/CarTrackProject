@@ -22,6 +22,7 @@ Covered Things:-
 => on the top right corner there is a logout button by clicking it you can logout of the application to the login screen and your session will be expired.
 => if you kill the application without logout then you will directly land to the user listing screen because the session is still intact.
 => on the user listing screen there are multiple info of a user in the table.
+=> if any case data not found on listing screen there will show data not found cell with proper message.
 => by clicking on the website link, you can land on the website URL on the external safari browser.
 => if you click anywhere on the table apart from the website link you will redirect to the Map screen.
 => here you can see the location of the user as per given (lat,long) values in API.
